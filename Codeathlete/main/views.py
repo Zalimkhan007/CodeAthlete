@@ -46,6 +46,7 @@ def login(request):
             dj_login(request, user)
             return redirect('home')
 
+# Logout view 
 def logout(request):
     if request.method == 'POST':
         dj_logout(request)
