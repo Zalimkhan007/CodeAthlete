@@ -1,0 +1,276 @@
+
+html{
+    border-style: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Space Mono', monospace;
+    background-color: black;  
+    color:white;  
+}
+
+
+.header{
+    background-color: black; 
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+}
+
+.container{
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 10px;
+    justify-content: center
+}
+
+.header_inner{
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+}
+
+.logo{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.menu_list{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.menu_list_link{
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn_sign_in{
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    max-width: 50px;
+    width: 100%;
+}
+
+.btn_sign_up{
+    text-align: center;
+    color: black;
+    background-color: #FAFF00;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    max-width: 150px;
+    width: 100%; 
+}
+
+.user{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.btn_user{
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    cursor:pointer;
+    transition: all .5s;
+}
+
+.dropdown_user{
+    margin: 0 70px 0 50px;
+    width: 130px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.dropdown_user_menu {
+    text-align: center;
+    display: none;
+    position: absolute;
+    background-color:#2B2B2B;
+    width: 130px;
+    z-index: 11;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.dropdown_user_menu li{
+    text-align: center;
+}
+.dropdown_user_menu a{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.dropdown_user_menu button{
+    width: 100%;
+    background-color: inherit;
+    color: white;
+    border : none;
+    font-size: 16px;
+    font-family: 'Space Mono', monospace;
+}
+
+/* Показать выпадающее меню при наведении курсора */
+.dropdown_user:hover .dropdown_user_menu {display: block;}
+/* Изменение шрифта при наведении */
+.dropdown_user_menu a:hover{font-weight: bold;}
+.dropdown_user_menu button:hover{font-weight: bold;}
+.dropdown_user_menu form:hover{cursor: pointer;}
+
+
+.top{
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    padding-top: 150px; 
+}
+
+.top_content{
+    display: flex;
+    justify-content: start;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    max-width: 580px;
+    text-align: center;
+    padding-top: 250px;
+    padding-left: 340px;
+}
+
+.top_btn{
+    text-align: center;
+    color: black;
+    background-color: #FAFF00;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    max-width: 200px;
+    width: 100%;
+    max-height: 25px;
+}
+
+.top_btn_space{
+    padding-top: 30px;
+    padding-left: 500px;
+}
+
+.top_image{
+    border-radius: 50px;
+}
+
+.main_image{
+    padding-top: 100px;
+    padding-left: 280px;
+}
+
+.background{
+    background-color: black;
+    background-image: url('../img/bg.png');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.search{
+    padding-top: 250px;
+    padding-left: 14%;
+    max-width: 350px;
+    box-sizing: border-box;
+}
+
+.search_form{
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 30px 20px 10px;
+    width: 340px;
+}
+
+.search input{
+    display: block;
+    background-color: inherit;
+    border: 1px solid white;
+    border-radius: 30px;
+    width: 100%;
+    color: white;
+    padding: 7px;
+}
+
+
+.search img{
+    position: relative;
+}
+
+.search label{
+    position: relative;
+    color: white;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.icon_search{
+    bottom: 25px;
+    left: 270px;
+}
+
+.icon_down{
+    left: 273px;
+    bottom: 30px; 
+}
+
+.block_form_registration{
+    color: white;
+    padding-top: 200px ;
+}
+
+.block_form_login{
+    color: white;
+    padding-top: 200px ;
+}

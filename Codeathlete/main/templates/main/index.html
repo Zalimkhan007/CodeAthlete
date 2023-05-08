@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %} CodeAthlete {% endblock %}
+
+{% block content %}
+
+        <main class="main">
+            <section class="top" >
+                <div class="contaier">
+                    
+                    <div class="top_content">
+
+                        <div class="btn_and_title">
+
+                            <h1 class="title" >Добро пожаловать на CodeAthlete - онлайн-платформу, где вы можете учиться и тренироваться спортивному программированию.</h1>
+                            <div class="top_btn_space">
+                                <a href="{% url 'training' %}" class="top_btn">ПРОЙТИ БАЗОВЫЙ КУРС</a>    
+                            </div>
+                            
+                        </div>
+                        <div class="main_image">
+                            <img class = "top_image" src="{% static 'main/img/top_image.png' %}" alt="" height="600px">
+                        </div>
+                    
+                    </div>
+
+                </div>
+            </section>
+            <div class="background"></div>
+        </main>
+
+{% endblock %}

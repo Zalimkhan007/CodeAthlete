@@ -1,0 +1,35 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %} Практика {% endblock %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block content %} 
+        <div class="search">
+            <div class="contaier">
+                <form action="search.php" method="POST" class="search_form">
+
+                    <div class="search_form_input">
+                        <input class="search_input" type="text">
+                        <img src="{% static 'main/img/icon_search.svg'%}" alt="" class="icon_search">
+                    </div>
+                
+                    <div class="search_form_language">
+                        <label class="search_form_language_label">Язык программирования</label>
+                        <input class="language_input" type="text">
+                        <img src="{% static 'main/img/icon_down.svg'%}" alt="" class="icon_down">
+                    </div>
+
+                    <div class="search_form_difficulty">
+                        <label class="search_form_difficulty_label">Сложность</label>
+                        <input class="difficulty_input" type="text">
+                        <a href="#"><img src="{% static 'main/img/icon_down.svg'%}" alt="" class="icon_down"></a>
+                        
+                    </div>
+                 
+                </form>
+            </div>
+        </div>
+{% endblock %}

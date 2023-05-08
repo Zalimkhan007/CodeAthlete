@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    {% block css %} 
+    {% endblock %}
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <header class="header">
+            <div class="container">
+
+                <div class="header_inner">
+                    
+                    
+                    <a href="{% url 'home' %}" class="logo">CodeAthlete</a>
+                
+                    <nav class="menu">
+                        <ul class="menu_list">
+                            <li class="menu_list_item">
+                                <a href="{% url 'home' %}" class="menu_list_link">ГЛАВНАЯ</a>
+                            </li>
+                            <li class="menu_list_item">
+                                <a href="{% url 'training' %}" class="menu_list_link">ОБУЧЕНИЕ</a>
+                            </li>
+                            <li class="menu_list_item">
+                                <a href="{% url 'practice' %}" class="menu_list_link">ПРАКТИКА</a>
+                            </li> 
+                        </ul>
+                    </nav>
+                    {% if user.is_authenticated %}
+                        <div class="dropdown_user">
+                            <a class="btn_user" href="#">{{user}}</a>
+                            <div class="dropdown_user_menu">
+                                <ul>
+                                    <li><a href="#">Личный кабинет</a></li>
+                                    <li>
+                                        <form action="{% url 'logout' %}" method="POST">
+                                            {% csrf_token%}
+                                            <a><button type="submit">Выйти</button></a>
+                                        </form>
+                                        
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                        
+
+                    {% else %}
+                        <div class="user">
+                            <a class="btn_sign_in" href="{% url 'login' %}">ВХОД</a>
+                            <a class="btn_sign_up" href="{% url 'registration' %}">РЕГИСТРАЦИЯ</a>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </header>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
